@@ -71,63 +71,8 @@ Designed as an educational prototype, CozyNet can be used as a starting point fo
 
 ## Architecture & Modules
 
-CozyNet/
-├─ .gitignore
-├─ LICENSE
-├─ README.md
-├─ analysis_options.yaml
-├─ pubspec.yaml
-├─ pubspec.lock
-├─ assets/
-│   └─ curtain.json
-├─ lib/
-│   ├─ main.dart
-│   ├─ home_screen.dart
-│   ├─ welcome_screen.dart
-│   ├─ lamp_simulation.dart
-│   ├─ coffee_simulation.dart
-│   ├─ curtain_simulation.dart
-│   ├─ services/
-│   │   ├─ mqtt_service.dart
-│   │   └─ database_helper.dart
-│   └─ widgets/
-│       ├─ device_tile.dart
-│       └─ temperature_chart.dart
-├─ test/
-│   ├─ services/
-│   │   └─ database_helper_test.dart
-│   └─ widgets/
-│       └─ temperature_chart_test.dart
-├─ android/
-│   ├─ app/
-│   │   ├─ build.gradle
-│   │   └─ src/
-│   │       └─ main/
-│   │           ├─ AndroidManifest.xml
-│   │           └─ kotlin/…
-│   ├─ build.gradle
-│   └─ gradle.properties
-├─ ios/
-│   ├─ Runner.xcodeproj/
-│   ├─ Runner/
-│   │   ├─ AppDelegate.swift
-│   │   └─ Info.plist
-│   └─ Podfile
-├─ web/
-│   ├─ index.html
-│   └─ favicon.png
-├─ linux/
-│   └─ … (CMakeLists, source files)
-├─ macos/
-│   └─ … (Xcode project files)
-└─ windows/
-    └─ runner/
-        ├─ CMakeLists.txt
-        ├─ flutter_window.cpp
-        ├─ flutter_window.h
-        ├─ main.cpp
-        ├─ runner.rc
-        └─ utils.cpp
+![image](https://github.com/user-attachments/assets/4eb2dc82-3e73-4316-b165-b295ff2c311e)
+
 
 
 - **`services/`**: Core logic for messaging and storage.  
