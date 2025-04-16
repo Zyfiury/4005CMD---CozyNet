@@ -101,10 +101,10 @@ CozyNet/
 ├─ android/
 │   ├─ app/
 │   │   ├─ build.gradle
-│   │   ├─ src/
-│   │   │   ├─ main/
-│   │   │   │   ├─ AndroidManifest.xml
-│   │   │   │   └─ kotlin/…  
+│   │   └─ src/
+│   │       └─ main/
+│   │           ├─ AndroidManifest.xml
+│   │           └─ kotlin/…
 │   ├─ build.gradle
 │   └─ gradle.properties
 ├─ ios/
