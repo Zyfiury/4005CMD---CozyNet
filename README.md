@@ -71,7 +71,8 @@ Designed as an educational prototype, CozyNet can be used as a starting point fo
 
 ## Architecture & Modules
 
-![image](https://github.com/user-attachments/assets/4eb2dc82-3e73-4316-b165-b295ff2c311e)
+![image](https://github.com/user-attachments/assets/9d38c344-7e0e-4f00-a41c-044e44df6732)
+
 
 
 
