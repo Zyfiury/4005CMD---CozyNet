@@ -1,4 +1,4 @@
-//Adams commit
+//Adams code
 import 'package:flutter/material.dart';
 
 class LampControlScreen extends StatefulWidget {
