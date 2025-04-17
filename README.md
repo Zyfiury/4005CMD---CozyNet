@@ -145,6 +145,13 @@ Place Lottie animations, icons, and other static resources in the `assets/` dire
   ```
 
 ---
+## Demo
+
+Watch the light bulb turn on and off through the app:
+
+https://github.com/user-attachments/assets/3e13981f-66b6-4336-bc07-98a01abca004
+---
+
 
 ## Customization & Extension
 
