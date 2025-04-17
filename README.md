@@ -89,87 +89,107 @@ Designed as an educational prototype, CozyNet can be used as a starting point fo
    ```bash
    git clone https://github.com/your-username/cozynet.git
    cd cozynet
-Install Flutter dependencies
+## Installation & Setup
 
-bash
-Copy
-Edit
+### 1. Install Flutter Dependencies
+```bash
 flutter pub get
-Run on your device or emulator
+```
 
-bash
-Copy
-Edit
+### 2. Launch the App
+```bash
 flutter run
-Configuration
-MQTT Broker
-Edit lib/services/mqtt_service.dart to point at your broker (default: mqtt.eclipseprojects.io).
+```
 
-Database Name & Version
-Modify _databaseName and _databaseVersion in DatabaseHelper.
+---
 
-Assets
-Lottie animations and icons in assets/; update pubspec.yaml to register new files.
+## Configuration
 
-Usage Examples
-Toggle a Lamp
-Send {"state": true} to topic devices/lamp/1/command.
+### MQTT Broker
+Open `lib/services/mqtt_service.dart` and update the `broker` constant to point at your MQTT server (default: `mqtt.eclipseprojects.io`).
 
-View Temperature History
-On the dashboard, tap the chart’s “History” icon to load the last 50 readings.
+### Database Settings
+In `lib/services/database_helper.dart`, modify the `_databaseName` and `_databaseVersion` constants to suit your needs.
 
-Switch Theme
-Press the theme toggle button in the AppBar.
+### Assets
+Place Lottie animations, icons, and other static resources in the `assets/` directory, then register them under the `flutter.assets` section of `pubspec.yaml`.
 
-Testing
-Unit Tests
-Place tests for services under test/services/.
+---
 
-Widget Tests
-Add UI tests under test/widgets/.
+## Usage Examples
 
-Run all tests with:
+- **Toggle a Lamp**
+  ```bash
+  mosquitto_pub -h your-broker -t devices/lamp/1/command -m '{"state": true}'
+  ```
 
-bash
-Copy
-Edit
-flutter test
-Customization & Extension
-Add New Devices
+- **View Temperature History**  
+  In the app dashboard, tap the **History** icon on the temperature chart to load the last 50 readings.
 
-Create a simulator class in simulations/ following the existing pattern.
+- **Switch Theme**  
+  Tap the theme‑toggle button in the AppBar to switch between light and dark modes.
 
-Publish/subscribe on new MQTT topics.
+---
 
-Build a UI tile in widgets/device_tile.dart.
+## Testing
 
-Enhance Auth
-Replace the simple house‑name flow with Firebase Auth or OAuth.
+- **Unit Tests**  
+  Add service tests under `test/services/`.
 
-Remote Persistence
-Swap SQLite with a REST API or cloud database (FireStore, AWS Amplify).
+- **Widget Tests**  
+  Add widget tests under `test/widgets/`.
 
-Troubleshooting
-MQTT Connection Fails
+- **Run All Tests**
+  ```bash
+  flutter test
+  ```
 
-Verify broker URL and port.
+---
 
-Check network/firewall settings.
+## Customization & Extension
 
-Database Corruption
+### Add New Devices
+1. Create a new simulator class in `lib/simulations/`, following the existing pattern.  
+2. Define new MQTT topics in `MQTTService`.  
+3. Implement a UI tile in `lib/widgets/device_tile.dart`.
 
-Uninstall the app or delete temperature.db to reset.
+### Enhance Authentication
+Replace the built‑in “house‑name” login flow with Firebase Auth, OAuth, or another provider.
 
-Contributing
-Fork the repository
+### Remote Persistence
+Swap local SQLite storage for a remote backend (REST API, Firestore, AWS Amplify, etc.).
 
-Create a feature branch (git checkout -b feature/x)
+---
 
-Commit your changes (git commit -m "Add feature x")
+## Troubleshooting
 
-Push to the branch (git push origin feature/x)
+- **MQTT Connection Issues**  
+  - Verify broker URL, port, and network accessibility.  
+  - Confirm any required client credentials or certificates.
 
-Open a Pull Request
+- **Database Corruption**  
+  Delete the `temperature.db` file in your app’s data directory or reinstall the app to reset the local database.
+
+---
+
+## Contributing
+
+1. **Fork** the repository.  
+2. **Create a feature branch**  
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```  
+3. **Commit your changes**  
+   ```bash
+   git commit -m "feat: short description of your work"
+   ```  
+4. **Push** to your fork  
+   ```bash
+   git push origin feature/your-feature-name
+   ```  
+5. **Open a Pull Request** on the main repository.  
+
+Please adhere to the [Flutter Style Guide](https://flutter.dev/docs/development/tools/formatting) and include tests for all new features.
 
 Please follow the Flutter Style Guide and include tests for new features.
 
